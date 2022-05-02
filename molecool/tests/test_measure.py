@@ -7,6 +7,19 @@ import molecool
 import numpy as np
 import pytest
 
+def test_calculate_angle_radians():
+    """Test the calculate_angle function with output in radians"""
+
+    r1 = np.array([1, 0, 0])
+    r2 = np.array([0, 0, 0])
+    r3 = np.array([0, 1, 0])
+
+    expected_value = 90 * (np.pi / 180)
+
+    calculated_value = molecool.calculate_angle(r1, r2, r3)
+    assert expected_value == calculated_value
+
+
 @pytest.mark.slow
 def test_calculate_distance():
     """Test that calculate_distance function calculates what we expect."""
